@@ -1,0 +1,4 @@
+#Ignore copile folders
+dist
+target
+node_modules
