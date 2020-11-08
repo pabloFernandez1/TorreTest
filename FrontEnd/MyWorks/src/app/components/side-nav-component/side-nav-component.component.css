@@ -1,0 +1,21 @@
+.toggleBar {
+    position: static;
+    background-color: transparent;
+  }
+  .header-image {
+    background-image: url('https://torre.co/');
+    background-size: cover;
+  }
+  .userAvatar{
+      background-color: darkgray;
+  }
+  .menuButton{
+    color:white;
+    width: 100%;
+    background-color: black;
+    transition: background-color 1.3s;
+
+  }
+  :hover .menuButton{
+    background-color: rgb(65, 64, 64);
+  }

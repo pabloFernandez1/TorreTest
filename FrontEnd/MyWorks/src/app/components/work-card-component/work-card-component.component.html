@@ -1,0 +1,39 @@
+<div class="workCard">
+    <div *ngIf="isSearching">
+        <mat-card>
+          <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <input type="text" ngModel required #first="ngModel" name="search">
+            <button mat-button type="submit">Search</button>
+          </form>
+        </mat-card>
+      </div>
+
+      <div *ngIf="!isSearching">
+        <mat-card class="mid-work-card">
+            <mat-card-header>
+              <div mat-card-avatar class="header-image" [style.background-image] = "'url('+ job.picture +')'"></div>
+              <mat-card-title>{{job.objective}} at {{job.name}}</mat-card-title>
+              <mat-card-subtitle>{{job.type}}</mat-card-subtitle>
+              <mat-card-subtitle>
+                  <span>{{job.currency}} </span>
+                  <span>{{job.minAmount}} - </span>
+                  <span>{{job.maxAmount}}</span>
+            </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-actions>
+              <button mat-icon-button (click)="addFav()"><mat-icon>favorite</mat-icon></button>
+              <button mat-icon-button (click)="addDislike()"><mat-icon>thumb_down</mat-icon></button>
+            </mat-card-actions>
+            <button mat-icon-button (click)="goSearch()"><mat-icon>keyboard_backspace</mat-icon></button>
+          </mat-card>
+      </div>
+</div>
+<ng-container *ngIf="isLoading">
+  <div class="overlay">
+      <div class="center">
+          <mat-progress-spinner [diameter]=70
+                                mode="indeterminate">
+          </mat-progress-spinner> 
+      </div>
+  </div>
+</ng-container>

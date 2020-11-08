@@ -1,0 +1,19 @@
+<div class="loginCard">
+  <h1>My Works</h1>
+  <mat-card>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <input type="text" ngModel required #first="ngModel" name="idUser">
+      <button mat-button type="submit">Log In</button>
+    </form>
+  </mat-card>
+</div>
+
+<ng-container *ngIf="isLoading">
+  <div class="overlay">
+      <div class="center">
+          <mat-progress-spinner [diameter]=70
+                                mode="indeterminate">
+          </mat-progress-spinner> 
+      </div>
+  </div>
+</ng-container>
